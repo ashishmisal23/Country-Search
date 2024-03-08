@@ -26,53 +26,63 @@ const ContryFinder = () => {
     };
 
     return (
-        <div className="container">
+        <>
+            <section className='container'>
 
 
-            <div className='box-container'>
-                <h1>Country Names by the Currency Code</h1>
-                <form className='form'>
-                    <input
-                        type="text"
-                        value={currencyCode}
-                        onChange={e => setCurrencyCode(e.target.value)}
-                        placeholder="Enter currency codes like: INR, USD etc."
-                    />
-                    <button onClick={handleSearch}>Search</button>
-                </form>
-            </div>
-            {
-                searchClick === true ? (
-                    <div id="search-results box-container">
-                        {searchResults.length === 0 ? (
-                            <p>No countries found for the provided currency code.</p>
-                        ) : (
-                            <div>
-                                {searchResults.map(country => (
-                                    <div key={country.cca2} className=''>
-                                        <div>
-                                            <img
-                                                src={`https://flagsapi.com/${country.cca2.toUpperCase()}/shiny/64.png`}
-                                                alt={country.cca2 ? (country.cca2) : ('Flag Not Available')}
-                                            />
+
+
+                <div className='box-container'>
+                    <h1>Country Search</h1>
+                    <form className='form'>
+                        <input
+                            type="text"
+                            value={currencyCode}
+                            onChange={e => setCurrencyCode(e.target.value)}
+                            placeholder="Enter currency codes like: INR, USD etc."
+                        />
+                        <button onClick={handleSearch}>Search</button>
+                    </form>
+
+
+                </div>
+            </section>
+            <section className='container'>
+
+
+                {
+                    searchClick === true ? (
+                        <div id="">
+                            {searchResults.length === 0 ? (
+                                <p>No countries found for the provided currency code.</p>
+                            ) : (
+                                <div id='search-results'>
+                                    {searchResults.map(country => (
+                                        <div key={country.cca2} className='grid'>
+                                            <div className='img-container'>
+                                                <img
+                                                    src={`https://flagsapi.com/${country.cca2.toUpperCase()}/shiny/64.png`}
+                                                    alt={country.cca2 ? (country.cca2) : ('Flag Not Available')}
+                                                />
+                                            </div>
+                                            <div className='country-name-container'>
+                                                <p>Country Name:  <i>{country.name.common}</i></p>
+                                                <p>Capital Name:  <i>{country.capital}</i></p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p><b>Country Name:  <i>{country.name.common}</i></b></p>
-                                            <p><b>Capital Name:  <i>{country.capital}</i></b></p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                ) : (
-                    <div id="search-predefined-msg">
-                        <p>Enter Currency...</p>
-                    </div>
-                )
-            }
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <div id="search-predefined-msg">
+                            <p>Enter Currency...</p>
+                        </div>
+                    )
+                }
+            </section>
 
-        </div>
+        </>
     );
 }
 
