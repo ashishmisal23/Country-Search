@@ -30,8 +30,6 @@ const ContryFinder = () => {
             <section className='container'>
 
 
-
-
                 <div className='box-container'>
                     <h1>Country Search</h1>
                     <form className='form'>
@@ -48,7 +46,6 @@ const ContryFinder = () => {
                 </div>
             </section>
             <section className='container'>
-
 
                 {
                     searchClick === true ? (
