@@ -36,13 +36,3 @@ body{
     min-width: 5rem;
     padding: 0.35rem;
 }
-
-.search-results{
-    display: grid;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    justify-content: center;
-    align-items: center;
-    margin: 8rem auto ;
-    max-width: 50vw;
-}
