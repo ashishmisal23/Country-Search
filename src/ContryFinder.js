@@ -31,7 +31,7 @@ const ContryFinder = () => {
 
 
                 <div className='box-container'>
-                    <h1>Country Search</h1>
+                    <h1>Country Search By Currency</h1>
                     <form className='form'>
                         <input
                             type="text"
